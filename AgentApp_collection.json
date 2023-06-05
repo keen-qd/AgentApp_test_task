@@ -1,0 +1,601 @@
+{
+	"info": {
+		"_postman_id": "d03db925-dba5-40d4-9974-90620886d150",
+		"name": "AgentApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tests",
+			"item": [
+				{
+					"name": "Создание водителя 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonResponse = pm.response.json();\r",
+									"pm.environment.set(\"driver_id1\", jsonResponse.id);\r",
+									"\r",
+									"//проверка на 201 код\r",
+									"pm.test(\"Код ответа должен быть 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Иван\",\r\n    \"last_name\": \"Васильев\",\r\n    \"patronymic\": \"Петров\",\r\n    \"birth_date\": \"1990-01-01\",\r\n    \"driving_experience_started\": \"2010-10-10\",\r\n    \"driver_licenses\": [\r\n        {\r\n            \"credential_type\": \"DRIVER_LICENSE\",\r\n            \"number\": \"012344\",\r\n            \"series\": \"1235\",\r\n            \"issue_date\": \"2010-10-10\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/drivers",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_version}}",
+								"insured_objects",
+								"drivers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание водителя 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonResponse = pm.response.json();\r",
+									"pm.environment.set(\"driver_id2\", jsonResponse.id);\r",
+									"\r",
+									"//проверка на 201 код\r",
+									"pm.test(\"Код ответа должен быть 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Егор\",\r\n    \"last_name\": \"Козлов\",\r\n    \"patronymic\": \"Дмитриевич\",\r\n    \"birth_date\": \"1992-04-02\",\r\n    \"driving_experience_started\": \"2011-10-10\",\r\n    \"driver_licenses\": [\r\n        {\r\n            \"credential_type\": \"DRIVER_LICENSE\",\r\n            \"number\": \"012343\",\r\n            \"series\": \"1233\",\r\n            \"issue_date\": \"2011-10-10\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/drivers",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_version}}",
+								"insured_objects",
+								"drivers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание водителя 3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonResponse = pm.response.json();\r",
+									"pm.environment.set(\"driver_id3\", jsonResponse.id);\r",
+									"\r",
+									"//проверка на 201 код\r",
+									"pm.test(\"Код ответа должен быть 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Артем\",\r\n    \"last_name\": \"Марков\",\r\n    \"patronymic\": \"Олегович\",\r\n    \"birth_date\": \"1993-01-01\",\r\n    \"driving_experience_started\": \"2013-10-10\",\r\n    \"driver_licenses\": [\r\n        {\r\n            \"credential_type\": \"DRIVER_LICENSE\",\r\n            \"number\": \"012342\",\r\n            \"series\": \"1234\",\r\n            \"issue_date\": \"2013-10-10\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/drivers",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_version}}",
+								"insured_objects",
+								"drivers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание собственника",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonResponse = pm.response.json();\r",
+									"pm.environment.set(\"owner_id\", jsonResponse.person);\r",
+									"\r",
+									"//Берем перввый адрес из массива адресов и из него достаем строку полного адреса\r",
+									"pm.environment.set(\"address_query\", jsonResponse.address[0].address_query);\r",
+									"\r",
+									"//проверка на 201 код\r",
+									"pm.test(\"Код ответа должен быть 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"last_name\": \"Щедрин\",\r\n    \"first_name\": \"Владимир\",\r\n    \"patronymic\": \"Александрович\",\r\n    \"birth_date\": \"1988-01-01\",\r\n    \"credential\": [\r\n        {\r\n            \"credential_type\": \"RUSSIAN_INTERNAL_PASSPORT\",\r\n            \"issue_date\": \"2017-03-08\",\r\n            \"issue_point\": \"УФМС\",\r\n            \"issue_point_code\": \"123-456\",\r\n            \"number\": \"123456\",\r\n            \"series\": \"1234\"\r\n        }\r\n    ],\r\n    \"address\": [\r\n        {\r\n            \"address_query\": \"г Санкт-Петербург, г Ломоносов, ул Швейцарская, д 1 к 1, кв 1\",\r\n            \"address_type\": \"LEGAL_ADDRESS\",\r\n            \"region_kladr_id\": \"7800000000000\",\r\n            \"city_kladr_id\": \"7800000600000\"\r\n        },\r\n        {\r\n            \"address_query\": \"г Санкт-Петербург, г Ломоносов, ул Швейцарская, д 1 к 1, кв 1\",\r\n            \"address_type\": \"ACTUAL_ADDRESS\",\r\n            \"region_kladr_id\": \"7800000000000\",\r\n            \"city_kladr_id\": \"7800000600000\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/owners/natural_persons",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_version}}",
+								"insured_objects",
+								"owners",
+								"natural_persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание страхователя",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonResponse = pm.response.json();\r",
+									"pm.environment.set(\"insurant_id\", jsonResponse.person);\r",
+									"\r",
+									"//проверка на 201 код\r",
+									"pm.test(\"Код ответа должен быть 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"last_name\": \"Зубарев\",\r\n    \"first_name\": \"Геннадий\",\r\n    \"patronymic\": \"Петрович\",\r\n    \"birth_date\": \"1990-01-01\",\r\n    \"credential\": [\r\n        {\r\n            \"credential_type\": \"RUSSIAN_INTERNAL_PASSPORT\",\r\n            \"issue_date\": \"2010-10-10\",\r\n            \"issue_point\": \"УФМС\",\r\n            \"issue_point_code\": \"123-456\",\r\n            \"number\": \"123456\",\r\n            \"series\": \"1234\"\r\n        }\r\n    ],\r\n    \"address\": [\r\n        {\r\n            \"address_query\": \"г Санкт-Петербург, г Ломоносов, ул Швейцарская, д 1 к 1, кв 1\",\r\n            \"address_type\": \"LEGAL_ADDRESS\",\r\n            \"region_kladr_id\": \"7800000000000\",\r\n            \"city_kladr_id\": \"7800000600000\"\r\n        },\r\n        {\r\n            \"address_query\": \"г Санкт-Петербург, г Ломоносов, ул Швейцарская, д 1 к 1, кв 1\",\r\n            \"address_type\": \"ACTUAL_ADDRESS\",\r\n            \"region_kladr_id\": \"7800000000000\",\r\n            \"city_kladr_id\": \"7800000600000\"\r\n        }\r\n    ],\r\n     \"contact\": [{\r\n        \"contact_type\": \"PHONE\",\r\n        \"data\": \"+7 (909) 111-22-33\",\r\n        \"comment\": null\r\n    }, {\r\n        \"contact_type\": \"EMAIL\",\r\n        \"data\": \"wedwg@ya.ru\",\r\n        \"comment\": null\r\n    }]\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/insurants/natural_persons",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_version}}",
+								"insured_objects",
+								"insurants",
+								"natural_persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание автомобиля",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonResponse = pm.response.json();\r",
+									"pm.environment.set(\"car_id\", jsonResponse.id);\r",
+									"pm.environment.set(\"engine_power\", jsonResponse.engine_power);\r",
+									"pm.environment.set(\"has_trailer\", jsonResponse.has_trailer);\r",
+									"pm.environment.set(\"car_type\", jsonResponse.car_type);     \r",
+									"\r",
+									"//проверка на 201 код\r",
+									"pm.test(\"Код ответа должен быть 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"car_model_id\": 864026180,\r\n    \"engine_power\": 211,\r\n    \"chassis_number\": 3333,\r\n    \"car_body_number\": 1213,\r\n    \"vin_number\": \"WAUZZZ8T4BA037241\",\r\n    \"number_plate\": \"Р904МХ178\",\r\n    \"manufacturing_year\": 2010,\r\n    \"max_mass\": null,\r\n    \"credential\": [\r\n        {\r\n            \"credential_type\": \"VEHICLE_REGISTRATION\",\r\n            \"issue_date\": \"2010-11-01\",\r\n            \"number\": \"267461\",\r\n            \"series\": \"78УН\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/cars",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_version}}",
+								"insured_objects",
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cущность “объект страхования”",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonResponse = pm.response.json();\r",
+									"pm.environment.set(\"insured_object_id\", jsonResponse.id);\r",
+									"\r",
+									"//проверка на 201 код\r",
+									"pm.test(\"Код ответа должен быть 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"drivers\":[\"{{driver_id1}}\",\"{{driver_id2}}\",\"{{driver_id3}}\"],\r\n  \"owner\": \"{{owner_id}}\",\r\n  \"car\": \"{{car_id}}\",\r\n  \"insurant\": \"{{insurant_id}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_version}}",
+								"insured_objects",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание договора",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonResponse = pm.response.json();\r",
+									"pm.environment.set(\"agreement_id\", jsonResponse.id);\r",
+									"\r",
+									"//проверка на 200 код\r",
+									"pm.test(\"Код ответа должен быть 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valid_from\": \"2023-06-30\",\r\n    \"valid_to\": \"2024-06-29\",\r\n    \"insurance_period\": \"8\",\r\n    \"periods\": [],\r\n    \"target_of_using\": \"11\",\r\n    \"drivers_ids\": [\r\n        \"{{driver_id1}}\",\r\n        \"{{driver_id2}}\",\r\n        \"{{driver_id3}}\"\r\n    ],\r\n    \"is_car_without_registration\": false,\r\n    \"engine_power\": {{engine_power}},\r\n    \"has_car_trailer\": {{has_trailer}},\r\n    \"car_type\": \"{{car_type}}\",\r\n    \"owner_registration\": {\r\n      \"address_query\": \"{{address_query}}\"\r\n    }\r\n\r\n    } \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_version}}/agreements/calculations",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_version}}",
+								"agreements",
+								"calculations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Обновление договора",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonResponse = pm.response.json();\r",
+									"pm.environment.set(\"agreement_id\", jsonResponse.id);\r",
+									"\r",
+									"//проверка на 200 код\r",
+									"pm.test(\"Код ответа должен быть 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"insured_object\": \"{{insured_object_id}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_version}}/agreements/{{agreement_id}}",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_version}}",
+								"agreements",
+								"{{agreement_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение полного расчета",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//проверка на 200 код\r",
+									"pm.test(\"Код ответа должен быть 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{http_schema}}://{{host}}/{{api_version}}/agreements/{{agreement_id}}/results/TEST_COMPANY",
+							"protocol": "{{http_schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_version}}",
+								"agreements",
+								"{{agreement_id}}",
+								"results",
+								"TEST_COMPANY"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const postRequest = {",
+					"    url: pm.environment.get(\"http_schema\") +\"://\"+ pm.environment.get(\"host\")+ \"/\"+ pm.environment.get(\"api_version\")  +  \"/users/obtain-token\", ",
+					"    method: \"POST\",",
+					"    header: {",
+					"        \"Content-Type\": \"application/json\"",
+					"        ",
+					"    },",
+					"    body: {",
+					"        mode: \"raw\",",
+					"        raw: JSON.stringify({",
+					"            username: pm.environment.get(\"username\"),",
+					"            password: pm.environment.get(\"password\")",
+					"        })",
+					"    }",
+					"};",
+					"//Запись полученного по логину и паролю токена в переменную",
+					"pm.sendRequest(postRequest, function (err, response) {",
+					"    console.log(err);",
+					"    console.log(response.json());",
+					"    pm.environment.set(\"token\", response.json().token);",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
